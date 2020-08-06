@@ -353,7 +353,7 @@ components:
           type: string
         url:
           type: string
-          pattern: ^https?://*
+          pattern: ^https?:\/\/.*$
       required:
         - id
         - url
@@ -364,7 +364,7 @@ components:
           type: string
         url:
           type: string
-          pattern: ^https?://*
+          pattern: ^https?:\/\/.*$
         timestamp:
           type: string
         owner:
