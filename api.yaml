@@ -65,8 +65,8 @@ paths:
           "200":
             statusCode: "301"
             responseParameters:
-              #method.response.header.Location: {"Fn::Sub": ["'master.${ampDomain}?error=url_not_found'", { "ampDomain": {"Fn::GetAtt":["AmplifyApp", "DefaultDomain"]} }]}
-              method.response.header.Location: "'/?error=url_not_found'"
+              method.response.header.Location: {"Fn::Sub": ["'${ampDomain}?error=url_not_found'", { "ampDomain": {"Fn::GetAtt":["AmplifyApp", "DefaultDomain"]} }]}
+              #method.response.header.Location: "'/?error=url_not_found'"
               method.response.header.Cache-Control: "'max-age=666'"
             responseTemplates:
               application/json: "#set($inputRoot = $input.path('$')) \
