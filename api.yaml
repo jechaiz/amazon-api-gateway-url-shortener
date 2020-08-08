@@ -110,7 +110,7 @@ paths:
             statusCode: "200"
             responseParameters:
               method.response.header.Cache-Control: "'no-cache, no-store'"
-              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://master.${ampDomain}'", { "ampDomain": {"Fn::GetAtt":["AmplifyApp", "DefaultDomain"]} }]}]}
+              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://lleve.me'"]}]}
             responseTemplates:
               application/json: "#set($inputRoot = $input.path('$'))[ \
                 #foreach($elem in $inputRoot.Items) { \
@@ -168,7 +168,7 @@ paths:
           "200":
             statusCode: "200"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://master.${ampDomain}'", { "ampDomain": {"Fn::GetAtt":["AmplifyApp", "DefaultDomain"]} }]}]}
+              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://lleve.me'"]}]}
             responseTemplates:
               application/json: "#set($inputRoot = $input.path('$')) \
                 {\"id\":\"$inputRoot.Attributes.id.S\", \
@@ -178,7 +178,7 @@ paths:
           "400":
             statusCode: "400"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://master.${ampDomain}'", { "ampDomain": {"Fn::GetAtt":["AmplifyApp", "DefaultDomain"]} }]}]}
+              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://lleve.me'"]}]}
             responseTemplates:
               application/json: "#set($inputRoot = $input.path('$')) \
                 #if($inputRoot.toString().contains(\"ConditionalCheckFailedException\")) \
@@ -212,7 +212,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'POST, GET, OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'authorization, content-type'"
-              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://master.${ampDomain}'", { "ampDomain": {"Fn::GetAtt":["AmplifyApp", "DefaultDomain"]} }]}]}
+              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://lleve.me'"]}]}
         type: "mock"
 
   /app/{linkId}:
@@ -251,7 +251,7 @@ paths:
           "200":
             statusCode: "200"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://master.${ampDomain}'", { "ampDomain": {"Fn::GetAtt":["AmplifyApp", "DefaultDomain"]} }]}]}
+              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://lleve.me'"]}]}
           "400":
             statusCode: "400"
             responseTemplates:
@@ -304,7 +304,7 @@ paths:
           "200":
             statusCode: "200"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://master.${ampDomain}'", { "ampDomain": {"Fn::GetAtt":["AmplifyApp", "DefaultDomain"]} }]}]}
+              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://lleve.me'"]}]}
             responseTemplates:
               application/json: "#set($inputRoot = $input.path('$')) \
                 {\"id\":\"$inputRoot.Attributes.id.S\", \
@@ -314,7 +314,7 @@ paths:
           "400":
             statusCode: "400"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://master.${ampDomain}'", { "ampDomain": {"Fn::GetAtt":["AmplifyApp", "DefaultDomain"]} }]}]}
+              method.response.header.Access-Control-Allow-Origin: {"Fn::If": ["IsLocal", "'*'", {"Fn::Sub": ["'https://lleve.me'"]}]}
             application/json: "{\"error\": {\"message\":\"Either you do not have permission to do this operation or a parameter is missing\"}}"
         type: "aws"
     options:
