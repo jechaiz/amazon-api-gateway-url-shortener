@@ -75,7 +75,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
         </div>
         <div v-else>
           <h1 class="title">Welcome to {{ appName }}</h1>
-          <h2 class="subtitle">The Porthos URL shortener.</h2>
+          <h2 class="subtitle">Our simple shortener.</h2>
           <p v-if="linkNotFound">
             We're sorry, that link could not be found.
             <a v-bind:href="signUpUrl">Sign up</a> or
@@ -103,7 +103,7 @@ export default {
   name: "app",
   data() {
     return {
-      appName: `Magic ${process.env.VUE_APP_NAME}`,
+      appName: `PorthosURL ${process.env.VUE_APP_NAME}`,
       signUpUrl: `${authDomain}/signup?response_type=code&client_id=${clientId}&redirect_uri=${redUrl}`,
       logInUrl: `${authDomain}/login?response_type=code&client_id=${clientId}&redirect_uri=${redUrl}`,
       logOutUrl: `${authDomain}/logout?client_id=${clientId}&logout_uri=${redUrl}`,
